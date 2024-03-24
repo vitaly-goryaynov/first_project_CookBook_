@@ -28,6 +28,6 @@
 
 ## Скриншоты
 
-<img src="https://github.com/vitaly-goryaynov/Cook-book/blob/6c7068284a71a47f388ce8058f03687f7225705d/cook_book/screenshot/1.png">
-<img src="https://github.com/vitaly-goryaynov/Cook-book/blob/c7da46eb02840c2aa4c24071b3f342498307bb77/cook_book/screenshot/2.png">
-<img src="https://github.com/vitaly-goryaynov/Cook-book/blob/f3fb6508aa817f1dc9a80bed1eea0024ac647661/cook_book/screenshot/3.png">
+<img src="https://github.com/vitaly-goryaynov/first_project_CookBook_/blob/master/cook_book/screenshot/1.png">
+<img src="https://github.com/vitaly-goryaynov/first_project_CookBook_/blob/master/cook_book/screenshot/2.png">
+<img src="https://github.com/vitaly-goryaynov/first_project_CookBook_/blob/master/cook_book/screenshot/3.png">
