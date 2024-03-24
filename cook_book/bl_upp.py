@@ -3,10 +3,18 @@ from cook_book import bl_low
 
 
 def load():
+    """
+    Функция загрузки системы
+    :return: Запускает создание системной папки CookBook
+    """
     return create_folder()
 
 
-def create_folder() -> bool:  # создание системной папки Cookbook
+def create_folder() -> bool:
+    """
+    Функция создания системной папки Cookbook
+    :return: True or False
+    """
     try:
         import os
 
@@ -21,6 +29,11 @@ def create_folder() -> bool:  # создание системной папки C
 
 
 def run_command(command) -> bool or str:
+    """
+    Функция получения команд от пользователя
+    :param command: Имя команды
+    :return: True or False или запускает команду выхода из приложения
+    """
     if command == 'list':
         bl_low.print_list_catalogs()
         return True
@@ -49,6 +62,10 @@ def run_command(command) -> bool or str:
 
 
 def input_path() -> str:
+    """
+    Функция для ввода корректного имени каталога
+    :return: Имя каталога
+    """
     GUI.output_info_mess('Введите название каталога')
     while True:
         name_catalog = GUI.input_user()
@@ -59,6 +76,10 @@ def input_path() -> str:
 
 
 def created_catalog() -> str or bool:
+    """
+    Функция созданияя каталога
+    :return: Успешное создание если название не повторяется или запуск меню каталога
+    """
     name_catalog = input_path()
 
     if not bl_low.is_check_existence_catalog(name_catalog):
@@ -68,7 +89,12 @@ def created_catalog() -> str or bool:
         return catalog_exist_menu(name_catalog)
 
 
-def catalog_exist_menu(file: str) -> str or bool:  # выбор создать новый каталог ?
+def catalog_exist_menu(file: str) -> str or bool:
+    """
+    Функия для выбора действий с существующим каталогом
+    :param file: Имя каталога
+    :return: Успешное создание каталога если True or False
+    """
     from cook_book.string import catalog_is_exist
     GUI.output_look_mess(catalog_is_exist)
 
@@ -94,6 +120,11 @@ def catalog_exist_menu(file: str) -> str or bool:  # выбор создать �
 
 
 def add_recipe(file: str) -> None:
+    """
+    Функция принимает ввод рецепта
+    :param file: Название каталога
+    :return: None
+    """
     from cook_book.string import sample_recipe
 
     recipe_info = []
@@ -136,6 +167,12 @@ def add_recipe(file: str) -> None:
 
 
 def input_attribute(name, i):
+    """
+    Функия проверки ввода параметров рецепта
+    :param name: Имя рецепта
+    :param i: Время создания рецепта, указывается в минутах
+    :return: Корректные названия
+    """
     while True:
         attribute = GUI.input_user()
         if "~" in attribute:
@@ -153,7 +190,11 @@ def input_attribute(name, i):
         return attribute
 
 
-def command_search() -> None or str:
+def command_search() -> None:
+    """
+    Функция поиска каталога
+    :return: None
+    """
     path = input_path()
     if bl_low.is_check_existence_catalog(path):
         GUI.output_look_mess('Каталог найден!')
@@ -162,6 +203,10 @@ def command_search() -> None or str:
 
 
 def work_with_catalog() -> str or None:
+    """
+    Функция принимает команды пользователя для меню каталога и запускает их реализацию
+    :return: None или команда выхода из приложения
+    """
     GUI.output_info_mess('info recipe menu')
     while True:
         command = GUI.input_user()

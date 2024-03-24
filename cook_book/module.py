@@ -3,6 +3,10 @@ from cook_book import bl_upp
 
 
 def start() -> None:
+    """
+    Функция запуска программы
+    :return: Если создалась успешно созадалась директория, запуск программы
+    """
     if not bl_upp.load():
         GUI.error_create_folder()
         return
@@ -12,6 +16,10 @@ def start() -> None:
 
 
 def mainloop() -> None:
+    """
+    Функция командного меню
+    :return: None
+    """
     GUI.output_info_mess('info_main_menu')
     while True:
         command = GUI.input_user()
